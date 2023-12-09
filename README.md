@@ -13,4 +13,4 @@ The red zone in middle of each button reduces the number of cherries by one , bu
 you can revive and continue from the same score for a price of 5 cherries.
 
 Running the code:
-To run the code  , extract the folder , open in intelije  , install required libraries if any and then run the code from intelije itself.
+To run the code  , extract the folder AP_final in the inner most layer and nothing else , open in intelije  , install required libraries if any and then run the code from intelije itself.

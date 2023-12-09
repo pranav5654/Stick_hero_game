@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="bg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMousePressed="#extend_stick" onMouseReleased="#stop_extending" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ap_final.main_Controller">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="884.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/bg.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="current" arcHeight="5.0" arcWidth="5.0" height="182.0" layoutX="38.0" layoutY="418.0" stroke="BLACK" strokeType="INSIDE" width="92.0" />
+      <ImageView fx:id="player" fitHeight="54.0" fitWidth="43.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true" x="64.0" y="364.0">
+         <image>
+            <Image url="@../../../assets/sprite.png" />
+         </image>
+         <rotationAxis>
+            <Point3D x="1.0" />
+         </rotationAxis>
+      </ImageView>
+      <Rectangle fx:id="next" arcHeight="5.0" arcWidth="5.0" height="182.0" layoutY="418.0" stroke="BLACK" strokeType="INSIDE" width="127.0" x="390.0" />
+      <Rectangle fx:id="stick" arcHeight="5.0" arcWidth="5.0" stroke="BLACK" strokeType="INSIDE" width="9.0" x="110.0" y="404.0">
+         <rotationAxis>
+            <Point3D z="-1.0" />
+         </rotationAxis>
+      </Rectangle>
+      <Rectangle arcHeight="30.0" arcWidth="30.0" fill="#90a9c1" height="54.0" layoutX="304.0" layoutY="26.0" opacity="0.33" stroke="BLACK" strokeType="INSIDE" width="166.0" />
+      <Rectangle fx:id="perfect" arcHeight="5.0" arcWidth="5.0" fill="#b70000" height="13.0" layoutY="418.0" stroke="BLACK" strokeType="INSIDE" width="35.0" x="435.0" />
+      <Text fx:id="score" layoutX="304.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="166.0">
+         <font>
+            <Font size="60.0" />
+         </font>
+      </Text>
+      <Pane fx:id="pause_button_pane" layoutX="686.0" layoutY="13.0" onMouseEntered="#true_pause" onMouseExited="#false_pause" prefHeight="80.0" prefWidth="92.0">
+         <children>
+            <Circle fill="#90a9c1" layoutX="46.0" layoutY="40.0" opacity="0.36" radius="37.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="41.0" fitWidth="40.0" layoutX="29.0" layoutY="20.0" onMousePressed="#pause" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/play.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="pause_menu" cache="true" cacheHint="SCALE_AND_ROTATE" layoutX="243.0" layoutY="158.0" prefHeight="94.0" prefWidth="314.0" visible="false">
+         <children>
+            <Rectangle arcHeight="40.0" arcWidth="40.0" fill="#a80f0f95" height="94.0" opacity="0.87" strokeType="INSIDE" strokeWidth="5.0" width="314.0">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0" startY="0.13257575757575757">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+            </Rectangle>
+            <ImageView fitHeight="74.0" fitWidth="113.0" layoutX="21.0" layoutY="10.0" onMouseReleased="#retry" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/rotate-right.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="74.0" fitWidth="74.0" layoutX="120.0" layoutY="14.0" onMousePressed="#save" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/save-file.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="74.0" fitWidth="74.0" layoutX="218.0" layoutY="10.0" onMousePressed="#home" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/home-page.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="game_over_pane" layoutX="178.0" layoutY="103.0" prefHeight="261.0" prefWidth="424.0" visible="false">
+         <children>
+            <Rectangle arcHeight="40.0" arcWidth="30.0" height="261.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="424.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.6754227848072154" startY="0.11361841160419359">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.7780275344848633" green="0.5829678177833557" blue="0.8684210777282715" opacity="0.6899999976158142" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.25">
+                           <color>
+                              <Color red="0.7669915556907654" green="0.5769980549812317" blue="0.8421052694320679" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.6450155508266492">
+                           <color>
+                              <Color red="0.8339300155639648" green="0.7031000256538391" blue="0.8899999856948853" opacity="0.7977099418640137" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9329268292682926">
+                           <color>
+                              <Color red="0.7004299759864807" green="0.2581000030040741" blue="0.8899999856948853" opacity="0.6259542107582092" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.7004299759864807" green="0.2581000030040741" blue="0.8899999856948853" opacity="0.6259542107582092" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Text layoutX="21.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Game Over" wrappingWidth="397.0">
+               <font>
+                  <Font size="75.0" />
+               </font>
+               <fill>
+                  <RadialGradient centerX="0.4834254143646408" centerY="0.5758293838862559" focusAngle="164.17" focusDistance="-0.04597701149425282" radius="0.9252873563218391">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" green="0.03999999910593033" blue="0.03999999910593033" opacity="0.6299999952316284" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.08536585365853659">
+                           <color>
+                              <Color red="1.0" green="0.03999999910593033" blue="0.03999999910593033" opacity="0.6299999952316284" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.4651947945653952">
+                           <color>
+                              <Color red="0.3100000023841858" green="0.11159999668598175" blue="0.11159999668598175" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.9966442953020134">
+                           <color>
+                              <Color red="0.3100000023841858" green="0.11159999668598175" blue="0.11159999668598175" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.3100000023841858" green="0.11159999668598175" blue="0.11159999668598175" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Text>
+            <Text layoutX="42.0" layoutY="126.0" stroke="#00ff487a" strokeType="OUTSIDE" strokeWidth="0.0" text="HighScore:" wrappingWidth="158.8759765625">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <Text fx:id="highscore" layoutX="252.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="67.53571319580078">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="59.0" layoutY="186.0" onMousePressed="#retry_over" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/rotate-right.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="320.0" layoutY="186.0" onMousePressed="#home_over" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/home-page.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="182.0" layoutY="189.0" onMousePressed="#revive" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/revive.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="42.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Score:">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <Text fx:id="last_score" layoutX="252.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="67.53571319580078">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Text>
+            <Text layoutX="205.0" layoutY="212.0" onMousePressed="#revive" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fx:id="cherry" fitHeight="34.0" fitWidth="31.0" layoutX="203.0" pickOnBounds="true" preserveRatio="true" y="431.0">
+         <image>
+            <Image url="@../../../assets/cherries.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="44.0" fitWidth="54.0" layoutX="11.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/cherries.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="cherry_text" layoutX="59.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="54.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

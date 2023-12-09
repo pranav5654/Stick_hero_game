@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ap_final.initial_Controller">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/ice_bg.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#051d33" height="136.0" layoutX="369.0" layoutY="464.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <ImageView fx:id="player" fitHeight="105.0" fitWidth="84.0" layoutX="381.0" layoutY="359.0" onMousePressed="#Skins" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/sprite.png" />
+         </image>
+      </ImageView>
+      <Circle fx:id="circle" fill="#ff3636cd" layoutX="411.0" layoutY="164.0" radius="80.0" stroke="BLACK" strokeType="INSIDE" />
+      <Text fx:id="start_text" fill="WHITE" layoutX="347.0" layoutY="168.0" onMouseClicked="#start_game" strokeType="OUTSIDE" strokeWidth="0.0" text="START" wrappingWidth="143.4000244140625">
+         <font>
+            <Font size="47.0" />
+         </font>
+      </Text>
+      <Text layoutX="37.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="5.0" text="Stick" underline="true" wrappingWidth="35.0615234375">
+         <font>
+            <Font size="85.0" />
+         </font>
+         <stroke>
+            <LinearGradient endX="0.9952606635071091" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.34259259700775146" blue="0.34259259700775146" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.33221476510067116">
+                     <color>
+                        <Color red="1.0" green="0.34259259700775146" blue="0.34259259700775146" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.8813431003437551">
+                     <color>
+                        <Color red="0.9868420958518982" green="0.8680555820465088" blue="0.8680555820465088" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.32894736528396606" green="0.06091617792844772" blue="0.06091617792844772" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Text>
+      <Text layoutX="689.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="5.0" text="Hero" underline="true" wrappingWidth="48.984375">
+         <font>
+            <Font size="72.0" />
+         </font>
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.39573459715639814" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" green="0.34259259700775146" blue="0.34259259700775146" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.39932885906040266">
+                     <color>
+                        <Color red="1.0" green="0.34259259700775146" blue="0.34259259700775146" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.659866590276641">
+                     <color>
+                        <Color red="0.9868420958518982" green="0.8680555820465088" blue="0.8680555820465088" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8421052694320679" green="0.33138400316238403" blue="0.33138400316238403" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </stroke>
+      </Text>
+      <Pane fx:id="skins_pane" layoutX="137.0" layoutY="73.0" prefHeight="447.0" prefWidth="547.0" visible="false">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="447.0" opacity="0.72" stroke="BLACK" strokeType="INSIDE" width="547.0" />
+            <ImageView fitHeight="99.0" fitWidth="77.0" layoutX="53.0" layoutY="63.0" onMousePressed="#sprite" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/sprite.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="136.0" fitWidth="111.0" layoutX="354.0" layoutY="45.0" onMousePressed="#shadow" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/shadow.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="160.0" fitWidth="110.0" layoutX="43.0" layoutY="244.0" onMousePressed="#hornet" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/hornet.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="147.0" fitWidth="98.0" layoutX="365.0" layoutY="244.0" onMousePressed="#hollow" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/hollow_knight.png" />
+               </image>
+            </ImageView>
+            <Text fill="RED" layoutX="463.0" layoutY="335.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="470.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Text>
+            <Text fill="RED" layoutX="158.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="50">
+               <font>
+                  <Font size="37.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="52.0" fitWidth="49.0" layoutX="729.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../assets/cherries.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="cherry_text" layoutX="651.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER" wrappingWidth="72.48213958740234">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="376.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shop">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
